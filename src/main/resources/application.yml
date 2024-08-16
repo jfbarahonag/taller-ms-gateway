@@ -1,0 +1,23 @@
+server:
+  port:  8084
+
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      routes:
+      - id: MS-USER
+        uri: lb://MS-USER
+        predicates:
+        - Path=/v1/users/**
+        
+eureka:
+  instance:
+    prefer-ip-address: false
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8083/eureka
+

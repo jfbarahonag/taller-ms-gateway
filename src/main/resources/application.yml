@@ -10,11 +10,11 @@ spring:
       - id: MS-USER
         uri: lb://MS-USER
         predicates:
-        - Path=/v1/users/**
+          - Path=/v1/users/**
       - id: MS-NOTIFICATIONS
         uri: lb://MS-NOTIFICATIONS
         predicates:
-        - Path=/v1/email/**
+          - Path=/v1/email/**
         
 eureka:
   instance:
